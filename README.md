@@ -10,6 +10,8 @@ Código, documentação, métodos, dados curados, imagens de satélite recortada
 - [Auditoria das imagens e pendências da validação](docs/methodology/meriti-validation-reference-audit.md)
 - [Bairros, localidades e limites aproximados](docs/methodology/meriti-neighborhoods-research.md)
 
+Esta é a branch de [avaliação da interface](docs/ui-review.md). Os dados, métodos e materiais de validação são os mesmos da branch `main`.
+
 ## Abrir no computador
 
 Instale Git e Node.js 20.9 ou posterior. Ambiente usado na publicação: Node.js 24.14.0.

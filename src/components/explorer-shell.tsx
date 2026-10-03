@@ -9,6 +9,7 @@ import { MapWorkspace } from "./map-workspace";
 import { OpportunityCard } from "./opportunity-card";
 import { InfoTip } from "./info-tip";
 import { LocalityCard } from "./locality-card";
+import "./explorer-review.css";
 
 const GRANULARITIES: Array<{ label: string; value: TerritorialUnitType }> = [
   { label: "Município", value: "municipality" },
@@ -78,17 +79,18 @@ export function ExplorerShell({ catalogStats, phase3Data }: { catalogStats: Cata
   }
 
   return (
-    <main className="workspace-shell">
+    <main className="workspace-shell ui-review">
       <header className="workspace-topbar">
         <div className="workspace-brand">
           <div className="workspace-brand__mark" aria-hidden="true">SJM</div>
           <div>
-            <p className="eyebrow">Soluções Baseadas na Natureza · São João de Meriti</p>
-            <h1>Mapa de oportunidades territoriais</h1>
+            <p className="eyebrow">São João de Meriti · Soluções baseadas na natureza</p>
+            <h1>Atlas ambiental de Meriti</h1>
           </div>
         </div>
         <div className="workspace-topbar__actions">
-          <span className="phase-pill">Indicadores sem pontuação composta</span>
+          <span className="phase-pill">Prévia de interface</span>
+          <a className="review-original-link" href="https://meriti-nbs-explorer.vercel.app/" target="_blank" rel="noopener noreferrer">Comparar com versão atual</a>
           <Link className="icon-link" href="/bairros">Bairros</Link>
           <Link className="icon-link" href="/validacao">Validação</Link>
           <Link className="icon-link" href="/catalogo"><Database size={18} aria-hidden="true" /><span>Catálogo</span></Link>
@@ -99,11 +101,26 @@ export function ExplorerShell({ catalogStats, phase3Data }: { catalogStats: Cata
         <span>Sentinel-2 de 2026 · áreas protegidas · rios e canais oficiais</span>
         <InfoTip label="Datas das evidências">Cada camada mantém a data da própria fonte. A série MapBiomas de 2019 a 2023 é independente da medição Sentinel-2 de 2026. A carta de inundação é de 2015, a hidrografia BC25 é da edição 2018 e o Censo é de 2022.</InfoTip>
       </div>
+      <nav className="exploration-toolbar" aria-label="Visualizações rápidas">
+        <span className="exploration-toolbar__label">Explorar</span>
+        {[
+          { label: "Vegetação recente", ids: ["vegetation-recent", "protected-areas", "rivers-official"] },
+          { label: "Imagem CBERS", ids: ["cbers-reference", "protected-areas"] },
+          { label: "Copas em 2019", ids: ["canopy-height", "protected-areas"] },
+          { label: "Vegetação em 2025", ids: ["vegetation-recurrence", "protected-areas"] },
+          { label: "Rios e inundação", ids: ["rivers-official", "water-bodies", "flood-susceptibility"] },
+          { label: "Densidade", ids: ["population", "rivers-official"] }
+        ].map((view) => <button type="button" key={view.label}
+          aria-pressed={activeOverlayIds.length === view.ids.length && view.ids.every((id) => activeOverlayIds.includes(id))}
+          onClick={() => setActiveOverlayIds(view.ids)}>{view.label}</button>)}
+        <span className="exploration-toolbar__count">{activeLayers.length} camadas ativas</span>
+        <button type="button" className="exploration-toolbar__clear" onClick={() => setActiveOverlayIds([])}>Limpar</button>
+      </nav>
       <section className="workspace-grid">
         <aside className="control-panel" aria-label="Controles do mapa">
           <section className="panel-section">
             <div className="panel-section__header"><MapPin size={18} aria-hidden="true" /><h2>Recorte territorial</h2></div>
-            <p>São João de Meriti · IBGE 3305109</p>
+            <p className="territory-code">Limites oficiais · IBGE 3305109</p>
             <button className="quick-focus" type="button" onClick={() => {
               setSelectedLocalityId(null);
               setViewportUnitId(phase3Data.studyArea.code);
