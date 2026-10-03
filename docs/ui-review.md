@@ -1,6 +1,6 @@
-# Prévia da interface de Meriti
+# Interface de Meriti
 
-Branch `codex/meriti-ui-review`, baseada na branch `main` deste repositório público. Usa os mesmos dados científicos. Para abrir, selecione a branch e execute `npm run dev -- --port 3109`; depois acesse http://localhost:3109. O link "Comparar com versão atual" abre https://meriti-nbs-explorer.vercel.app/. A alternativa permanece isolada da versão principal. Os registros de testes abaixo descrevem a revisão original; a transferência pública está documentada em [PUBLICACAO.md](PUBLICACAO.md).
+Interface aprovada e integrada à branch `main` em 03/10/2026. Execute `npm run dev` e abra http://localhost:3000. A branch `codex/meriti-ui-review` preserva a prévia histórica. O selo de prévia e o link de comparação foram retirados da interface principal. A integração conserva os dados, métodos e materiais da pesquisa. O envio à `main` deste repositório público não altera a integração anterior com a Vercel. Os registros de testes abaixo descrevem a revisão original; a transferência pública está documentada em [PUBLICACAO.md](PUBLICACAO.md).
 
 | Before | After | Why |
 | --- | --- | --- |
@@ -8,7 +8,7 @@ Branch `codex/meriti-ui-review`, baseada na branch `main` deste repositório pú
 | Combinação de camadas feita em várias caixas de seleção | Seis atalhos, com data ou fonte explícita e estado pressionado | Comparar rapidamente vegetação recente, CBERS, copas de 2019, recorrência de 2025, rios e densidade |
 | Navegação longa até o mapa no celular | Mapa antes dos controles, seguido pelos indicadores | Colocar a inspeção territorial no início da página |
 | Várias caixas e superfícies dentro dos painéis | Divisórias simples, cor de seleção e rolagem independente em computador | Reduzir a repetição de molduras e manter o mapa visível |
-| Comparação visual exige alternar pastas | Link direto para a versão atual | Avaliar a proposta sem substituir a interface anterior |
+
 
 Datas, fontes, limitações, cálculos, geometrias e fichas científicas são idênticos nas duas branches. Os atalhos apenas selecionam conjuntos de camadas. A decisão de não usar pontuação composta permanece.
 
@@ -19,3 +19,12 @@ Em 03/10/2026, a análise estática, 19 testes unitários e build de produção 
 A primeira rodada encontrou compressão vertical dos painéis no celular, com sobreposição que bloqueava cliques. O fluxo responsivo foi corrigido antes da rodada aprovada. A inspeção visual também corrigiu o contraste do distrito no território selecionado e aumentou o texto das camadas. As imagens de referência foram examinadas após o download completo.
 
 A validação geográfica passou também neste worktree, incluindo todos os hashes. O Git preserva os bytes dos dados científicos sem converter quebras de linha. A revisão adversarial Astra High aprovou o código, a integração científica e a apresentação em computador e celular.
+
+
+## Integração na main
+
+Em 03/10/2026, a interface aprovada foi promovida à versão principal. Foram retirados o selo de prévia e o link de comparação. O README e o guia de continuidade passaram a orientar o uso direto da `main`.
+
+A análise estática, os 26 testes unitários e o build de produção passaram. Dos dez cenários de navegador, oito passaram na primeira execução. Os dois cenários territoriais ainda esperavam os textos e contagens anteriores à inclusão das localidades do atlas. Foram atualizados para conferir 16 bairros do IBGE, cinco contornos aproximados, um ponto de referência e a quinta camada da legenda após ativar a hidrografia OSM. As verificações dos três distritos, dos 809 setores, das fontes e da apresentação foram mantidas. Os dois cenários passaram novamente em computador e celular, sem aumentar limites de tempo ou reduzir verificações.
+
+Os arquivos de dados, os scripts científicos e os documentos metodológicos não sofreram alterações nesta integração. O envio ao GitHub não altera a configuração anterior de publicação na Vercel.

@@ -89,8 +89,6 @@ export function ExplorerShell({ catalogStats, phase3Data }: { catalogStats: Cata
           </div>
         </div>
         <div className="workspace-topbar__actions">
-          <span className="phase-pill">Prévia de interface</span>
-          <a className="review-original-link" href="https://meriti-nbs-explorer.vercel.app/" target="_blank" rel="noopener noreferrer">Comparar com versão atual</a>
           <Link className="icon-link" href="/bairros">Bairros</Link>
           <Link className="icon-link" href="/validacao">Validação</Link>
           <Link className="icon-link" href="/catalogo"><Database size={18} aria-hidden="true" /><span>Catálogo</span></Link>

@@ -15,7 +15,7 @@ npm run dev
 
 Abra http://localhost:3000. O site usa os produtos já curados. Não precisa dos 29 GB externos para funcionar nem para examinar os materiais da validação. `npm run build` gera a versão de produção. As dependências JavaScript estão fixadas em `package-lock.json`.
 
-Para olhar a interface alternativa, pare o servidor e execute `git switch codex/meriti-ui-review`, depois `npm run dev`. Para voltar, use `git switch main`. Salve ou faça commit de alterações locais antes de trocar de branch. A interface alternativa compartilha todos os insumos científicos.
+A interface aprovada já está na branch `main`; não é necessário trocar de branch para usá-la. `codex/meriti-ui-review` preserva a prévia histórica. Para atualizar uma cópia existente, salve ou faça commit das suas alterações locais, selecione `main` e execute `git pull --ff-only`, depois `npm run dev`.
 
 A Vercel continua ligada à configuração anterior do projeto. Um commit neste novo repositório não atualiza automaticamente o site já publicado. Para conectar uma nova implantação, escolha este repositório, framework Next.js, comando `npm run build` e branch desejada. Não há chaves privadas necessárias ao site.
 

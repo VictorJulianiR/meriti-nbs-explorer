@@ -10,7 +10,7 @@ Código, documentação, métodos, dados curados, imagens de satélite recortada
 - [Auditoria das imagens e pendências da validação](docs/methodology/meriti-validation-reference-audit.md)
 - [Bairros, localidades e limites aproximados](docs/methodology/meriti-neighborhoods-research.md)
 
-Esta é a branch de [avaliação da interface](docs/ui-review.md). Os dados, métodos e materiais de validação são os mesmos da branch `main`.
+A interface aprovada foi integrada à `main`. O [registro da interface](docs/ui-review.md) descreve as mudanças.
 
 ## Abrir no computador
 
@@ -27,7 +27,7 @@ Abra http://localhost:3000. O preparo das imagens e das camadas públicas é aut
 
 ## O que está publicado
 
-A branch `main` contém a versão principal. A branch `codex/meriti-ui-review` contém a alternativa de interface para avaliação, com os mesmos dados e métodos.
+A branch `main` contém a versão principal com a nova interface. A branch `codex/meriti-ui-review` preserva a prévia que originou a integração. Os dados e métodos são os mesmos.
 
 O mapa reúne 19 camadas, 16 bairros do IBGE, três distritos, 809 setores censitários, seis referências de localidades adicionais, unidades de conservação, hidrografia e indicadores ambientais. Cinco localidades têm limites aproximados derivados de atlas; Vila São João tem apenas um ponto de referência. Não recebem indicadores inventados a partir dos bairros do IBGE. Não há pontuação composta ou ranking.
 

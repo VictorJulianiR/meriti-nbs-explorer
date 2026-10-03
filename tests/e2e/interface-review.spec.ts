@@ -1,11 +1,11 @@
 import { expect, test } from "@playwright/test";
 
-test("prévia: comparações por fonte, limpeza e leitura da validação", async ({ page }, testInfo) => {
+test("interface principal: comparações por fonte, limpeza e leitura da validação", async ({ page }, testInfo) => {
   const errors: string[] = [];
   page.on("pageerror", error => errors.push(error.message));
   await page.goto("/");
   await expect(page.getByRole("heading", { name: "Atlas ambiental de Meriti" })).toBeVisible();
-  await expect(page.getByRole("link", { name: "Comparar com versão atual" })).toHaveAttribute("href", "https://meriti-nbs-explorer.vercel.app/");
+  await expect(page.getByRole("link", { name: "Bairros", exact: true })).toHaveAttribute("href", "/bairros");
   await expect(page.locator(".map-panel__meta")).not.toContainText("carregando");
   const toolbar = page.getByRole("navigation", { name: "Visualizações rápidas" });
   for (const [button, layer] of [

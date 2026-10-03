@@ -28,7 +28,6 @@
 .ui-review .workspace-brand h1 { font-size: 22px; font-weight: 650; letter-spacing: -0.045em; }
 .ui-review .workspace-brand .eyebrow { font-size: 10px; letter-spacing: 0.055em; color: var(--ink-muted); }
 .ui-review .phase-pill { padding: 5px 8px; border-radius: 4px; font-size: 10px; background: var(--green-soft); color: var(--green); }
-.review-original-link { font-size: 11px; text-decoration: underline; text-underline-offset: 3px; color: var(--ink-muted); }
 .ui-review .data-notice { flex: 0 0 auto; min-height: 31px; padding: 3px 22px; border: 0; border-radius: 0; background: var(--background); color: var(--ink-muted); font-size: 11px; }
 .ui-review .data-notice strong { font-weight: 550; }
 .exploration-toolbar { display: flex; align-items: center; flex-wrap: wrap; gap: 6px; min-height: 48px; padding: 7px 20px; border-bottom: 1px solid var(--line); background: var(--surface); }
@@ -110,14 +109,12 @@
   .ui-review .map-panel { height: min(740px,82dvh); min-height: 460px; }
   .ui-review .opportunity-card { grid-column: 1 / -1; height: auto; overflow: visible; border-left: 0; border-top: 1px solid var(--line); padding: 24px; }
   .ui-review .workspace-topbar__actions { gap: 8px; }
-  .review-original-link { max-width: 100px; }
 }
 @media (max-width: 700px) {
   .ui-review .workspace-topbar { padding: 14px; gap: 14px; }
   .ui-review .workspace-brand h1 { font-size: 21px; }
   .ui-review .workspace-brand .eyebrow { font-size: 8px; }
   .ui-review .workspace-topbar__actions { width: 100%; justify-content: space-between; }
-  .review-original-link { max-width: none; }
   .ui-review .data-notice { padding: 8px 14px; gap: 5px; flex-wrap: wrap; }
   .ui-review .data-notice > span { display: none; }
   .exploration-toolbar { padding: 8px 10px; gap: 3px; }
