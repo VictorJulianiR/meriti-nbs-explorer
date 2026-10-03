@@ -12,6 +12,21 @@ Código, documentação, métodos, dados curados, imagens de satélite recortada
 
 A interface aprovada foi integrada à `main`. O [registro da interface](docs/ui-review.md) descreve as mudanças.
 
+## Dois repositórios e a conexão com a Vercel
+
+Separação registrada em 03/10/2026. O projeto do Rio ficou no repositório original. São João de Meriti começou em branches desse mesmo repositório, foi separado e passou a receber as novas atualizações neste repositório público.
+
+| Repositório | Papel após a separação |
+| --- | --- |
+| [rio-nbs-explorer](https://github.com/VictorJulianiR/rio-nbs-explorer) | Repositório original do Rio. Preserva também as primeiras branches de Meriti, anteriores à separação. |
+| [meriti-nbs-explorer](https://github.com/VictorJulianiR/meriti-nbs-explorer) | Repositório ativo de São João de Meriti. A pesquisa, os dados, a documentação e a interface continuam recebendo atualizações na branch `main`. |
+
+**A Vercel ainda está conectada ao repositório `rio-nbs-explorer`.** O projeto Vercel `meriti-nbs-explorer`, que publica [o site de Meriti](https://meriti-nbs-explorer.vercel.app/), continua usando a branch `codex/sao-joao-de-meriti` do repositório antigo. O projeto e o site originais do Rio mantêm sua publicação separada.
+
+Portanto, um push na `main` deste repositório público de Meriti não atualiza automaticamente o site já publicado. Os dois repositórios não são sincronizados automaticamente. Para continuar o desenvolvimento de São João de Meriti, use este repositório e a branch `main`.
+
+A migração da integração de publicação ainda está pendente. Para o site passar a acompanhar as atualizações daqui, será necessário conectar o projeto Vercel `meriti-nbs-explorer` a `VictorJulianiR/meriti-nbs-explorer` e definir `main` como branch de produção. Esta documentação registra a configuração existente; não executa essa mudança.
+
 ## Abrir no computador
 
 Instale Git e Node.js 20.9 ou posterior. Ambiente usado na publicação: Node.js 24.14.0.
